@@ -26,8 +26,8 @@ sub vcl_recv {
 
     # Assign if missing
     if (req.http.X-Experiment == "NONE") {
-        # 10% chance of going to B
-        if (std.random(0, 100) < 10) {
+        # 40% chance of going to B
+        if (std.random(0, 100) < 40) {
             set req.http.X-Experiment = "B";
             set req.backend_hint = backend_b;
         } else {

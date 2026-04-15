@@ -12,9 +12,15 @@ services:
       - backend-b
 
   backend-a:
-    image: nginx
-    container_name: backend-a
+    image: nginx:alpine
+    volumes:
+      - ./backend-a/index.html:/usr/share/nginx/html/index.html
+    expose:
+      - "80"
 
   backend-b:
-    image: nginx
-    container_name: backend-b
+    image: nginx:alpine
+    volumes:
+      - ./backend-b/index.html:/usr/share/nginx/html/index.html
+    expose:
+      - "80"
