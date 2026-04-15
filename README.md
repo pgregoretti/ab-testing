@@ -60,3 +60,5 @@ HTTP/1.1 200 OK
 X-Experiment: B
 X-Backend: backend_b
 ```
+
+This can also be done by visiting ```http://localhost:8080``` in the browser and visiting the respective ```index.html``` page.
