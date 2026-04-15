@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  varnish:
+    image: varnish:stable
+    volumes:
+      - ./main.vcl:/etc/varnish/default.vcl
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend-a
+      - backend-b
+
+  backend-a:
+    image: nginx
+    container_name: backend-a
+
+  backend-b:
+    image: nginx
+    container_name: backend-b
